@@ -34,31 +34,6 @@ A structured approach to mastering Data Structures and Algorithms.
 - [ ] Advanced DP
 - [ ] Backtracking & Recursion
 
-## 📁 Directory Structure
-
-```
-DSA with C++/
-├── Fundamentals/
-│   ├── Arrays/
-│   ├── Strings/
-│   └── Complexity/
-├── DataStructures/
-│   ├── LinkedLists/
-│   ├── Stacks/
-│   ├── Queues/
-│   ├── Trees/
-│   └── Graphs/
-├── Algorithms/
-│   ├── Sorting/
-│   ├── Searching/
-│   ├── DynamicProgramming/
-│   └── Greedy/
-└── Problems/
-    ├── LeetCode/
-    ├── Codeforces/
-    └── GeeksforGeeks/
-```
-
 ## 🚀 Quick Start
 
 1. Create a new problem file: `topic_name_problem.cpp`
@@ -85,11 +60,6 @@ int main() {
 3. Compile: `g++ -o solution topic_name_problem.cpp`
 4. Run: `./solution`
 
-## 📊 Progress Tracking
-
-Update the SQL database to track your progress:
-- Use `dsa_progress` table to log completed problems
-- Mark topics as `learning`, `practicing`, or `mastered`
 
 ## 🎯 Study Tips
 
