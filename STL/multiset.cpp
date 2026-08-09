@@ -22,7 +22,11 @@ void print_multiset(){
 
     for(int x : mst) cout<<x<<", ";
     cout<<endl;
-    
+    mst.erase(mst.find(1), next(mst.find(1), 2));
+    cout<<"After deleting all occurences of 1: "<<endl;
+     for(int x : mst) cout<<x<<", ";
+    cout<<endl;
+
 }
 
 int main(){
