@@ -9,6 +9,7 @@ void print_map(){
     //declaration-------------------------------------------------
     map<int, string> mp;//simple map key is integer and value is string
     map<int, pair<string, string>> mp1;//pair map key is integer and value is a pair of string
+    map<pair<int, int>, int> mp2; // pair is a key here and int is a value
 
     //insertion of elements----------------------------------------
     mp[1] = "Hello";//direct
@@ -17,24 +18,34 @@ void print_map(){
 
     mp1[1] = {"Hey", "kem cho"};
     mp1.emplace(2, make_pair("Hi", "Mja Ma"));
-    mp1.emplace(piecewise_construct, forward_as_tuple(3), forward_as_tuple("Prnce", "Software Engineer"));
+    mp1.emplace(piecewise_construct, forward_as_tuple(3), forward_as_tuple("Prince", "Software Engineer"));
     mp1.insert({4, {"Kailash", "Developer"}});
 
+    mp2[{1, 2}] = 34;
+    mp2.emplace(make_pair(3, 4), 83);
+    mp2.insert({{5, 6}, 97});
+
     //printing size of maps -------------------------------------------
-    cout<<"Size of normal map mp: "<<mp.size()<<", Size of Pair map mp1: "<<mp1.size()<<endl;
+    cout<<"Size of normal map mp: "<<mp.size()<<", Size of Pair map mp1: "<<mp1.size()<<", Size of pair map mp2: "<<mp2.size()<<endl;
 
     //printing elements of maps----------------------------------------
     cout<<"Elements of normal map: "<<endl;
     for(auto it = mp.begin(); it != mp.end(); ++it){
-        cout<<it->first<<" -> "<<it->second<<", ";
+        cout<<"("<<it->first<<" -> "<<it->second<<")"<<", ";
     }
-    cout<<endl;
+    cout<<endl<<endl;
 
-    cout<<"Elements of pair map: "<<endl;
+    cout<<"Elements of pair map mp1: "<<endl;
     for(auto p: mp1){
-        cout<<p.first<<" -> "<<p.second.first<<" - "<<p.second.second<<", ";
+        cout<<"{"<<p.first<<" -> "<<"("<<p.second.first<<", "<<p.second.second<<")"<<"}"<<", ";
     }
-    cout<<endl;
+    cout<<endl<<endl;
+
+    cout<<"Elements of pair map mp2: "<<endl;
+    for(auto p: mp2){
+        cout<<"{"<<"("<<p.first.first<<", "<<p.first.second<<")"<<" -> "<<p.second<<"}"<<", ";
+    }
+    cout<<endl<<endl;
 
     //different operations
     cout<<"Element access using mp[key]: "<<mp[2]<<endl;
@@ -48,7 +59,7 @@ void print_map(){
         cout<<"Element does'nt exist for key"<<endl;
     }
 
-    cout<<"Lower bound function mp.lower_bound(k): "<<(mp.lower_bound(2))-> second<<endl;
+    cout<<"Lower bound function mp.lower_bound(k): "<<(mp.lower_bound(2))-> second<<endl<<endl;
 
 }
 
